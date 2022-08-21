@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Everything you need to make a static site engine in one binary.">
+        <meta name="author" content="Vincent Prouillet">
+        <title>abridge | Zola </title>
+        <link rel="stylesheet" href="https://getzola.ru/site.css"/>
+        <link rel="icon" href="https://getzola.ru/favicon.ico">
+    </head>
+    <body>
+
+        <header>
+            <nav class="">
+                <a class="header__logo white" href="https:&#x2F;&#x2F;getzola.ru&#x2F;">Zola</a>
+                <a class="white" href="https://getzola.ru/documentation/" class="nav-link">Docs</a>
+                <a class="white" href="https://getzola.ru/themes/" class="nav-link">Themes</a>
+                <a class="white" href="https://zola.discourse.group/" class="nav-link">Forum</a>
+                <a class="white" href="https://github.com/getzola/zola" class="nav-link">GitHub</a>
+
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 Search the docs">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;getzola.ru&#x2F;themes&#x2F;abridge&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>abridge</h1>
+            <p>A fast and lightweight Zola theme using semantic html, a class-light abridge.css, and No JS.</p>
+            <p><b>Author:</b> Jake G (jieiku)</p>
+            <p><b>License:</b> MIT</p>
+            <p><b>Homepage:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;jieiku&#x2F;abridge&#x2F;">https:&#x2F;&#x2F;github.com&#x2F;jieiku&#x2F;abridge&#x2F;</a></p>
+            
+              <p><b>Live Demo:</b> <a href="https:&#x2F;&#x2F;abridge.netlify.app&#x2F;">https:&#x2F;&#x2F;abridge.netlify.app&#x2F;</a></p>
+            
+            <p><b>Last updated:</b> 2022-06-15T01:35:37-07:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <div align="center">
+<img src="https://raw.githubusercontent.com/Jieiku/abridge/master/abridge.svg"/>
+<h1 id="abridge-zola-theme">Abridge Zola Theme</h1>
+<p>Abridge is a fast and lightweight Zola theme using semantic html, only ~6kb css before the svg icons and syntax highlighting css, no mandatory JS<a href="https://github.com/Jieiku/abridge#contributing-and-philosophy">*</a>, and perfect <a href="https://web.dev/measure/?url=https%3A%2F%2Fabridge.netlify.app">Lighthouse</a> and <a href="https://observatory.mozilla.org/analyze/abridge.netlify.app">Observatory</a> scores.</p>
+<p>There is also <a href="https://github.com/jieiku/abridge.css">Abridge-minimal</a> Theme which is used to showcase the <a href="https://github.com/Jieiku/abridge.css/tree/master/dist">abridge.css framework</a></p>
+<p>Maintainence of this project is made possible by all the <a href="https://github.com/Jieiku/abridge/graphs/contributors">contributors</a> and <a href="https://github.com/sponsors/Jieiku">sponsors</a>. If you'd like to sponsor this project and have your avatar or company logo appear below <a href="https://github.com/sponsors/Jieiku">click here</a>. 💖</p>
+<!-- sponsors --><a href="https://github.com/yugfletcher"><img src="https://github.com/yugfletcher.png" width="60px" alt="" /></a><!-- sponsors -->
+<hr />
+<p><strong><a href="https://abridge.netlify.app/">View demo</a></strong></p>
+</div>
+<h2 id="requirements">Requirements</h2>
+<p>This theme requires version 0.14.1 or later of <a href="https://www.getzola.org/documentation/getting-started/installation/">Zola</a></p>
+<h2 id="quick-start">Quick Start</h2>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>git clone https://github.com/jieiku/abridge.git
+</span><span style="color:#da4939;">cd</span><span> abridge
+</span><span>zola serve
+</span><span style="font-style:italic;color:#7c7865;"># open http://127.0.0.1:1111/ in the browser
+</span></code></pre>
+<h2 id="installation">Installation</h2>
+<p>The Quick Start shows how to run the theme directly as a site.
+Next we will use abridge as a theme to a NEW site.</p>
+<h3 id="step-1-create-a-new-zola-site">Step 1: Create a new zola site</h3>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>zola init mysite
+</span></code></pre>
+<h3 id="step-2-install-abridge">Step 2: Install abridge</h3>
+<p>Download this theme to your themes directory:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#da4939;">cd</span><span> mysite/themes
+</span><span>git clone https://github.com/jieiku/abridge.git
+</span></code></pre>
+<p>Or install as a submodule:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#da4939;">cd</span><span> mysite
+</span><span>git init  </span><span style="font-style:italic;color:#7c7865;"># if your project is a git repository already, ignore this command
+</span><span>git submodule add https://github.com/jieiku/abridge.git themes/abridge
+</span></code></pre>
+<h3 id="step-3-configuration">Step 3: Configuration</h3>
+<p>Enable the theme in your <code>config.toml</code> in the site directory:</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#e8bf6a;">theme </span><span>= </span><span style="color:#c1be91;">&quot;abridge&quot;
+</span></code></pre>
+<p>Or copy the <code>config.toml</code> from the theme directory to your project's root directory:
+(This will give you a base configuration with all config values used)</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>cp themes/abridge/config.toml config.toml
+</span></code></pre>
+<p>Uncomment the theme line, and point extra_syntaxes_and_themes at the correct directory:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/^#theme = &quot;abridge&quot;/theme = &quot;abridge&quot;/&#39;</span><span> config.toml
+</span><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/^extra_syntaxes_and_themes = \[&quot;highlight_themes&quot;\]/extra_syntaxes_and_themes = \[&quot;highlight_themes&quot;, &quot;themes\/abridge\/highlight_themes&quot;\]/&#39;</span><span> config.toml
+</span></code></pre>
+<p>The result should be:</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#e8bf6a;">theme </span><span>= </span><span style="color:#c1be91;">&quot;abridge&quot;
+</span><span>[</span><span style="color:#e8bf6a;">markdown</span><span>]
+</span><span style="color:#e8bf6a;">extra_syntaxes_and_themes </span><span>= [</span><span style="color:#c1be91;">&quot;highlight_themes&quot;</span><span>, </span><span style="color:#c1be91;">&quot;themes/abridge/highlight_themes&quot;</span><span>]
+</span><span style="color:#e8bf6a;">highlight_code </span><span>= </span><span style="color:#6e9cbe;">true
+</span><span style="color:#e8bf6a;">highlight_theme </span><span>= </span><span style="color:#c1be91;">&quot;css&quot;
+</span></code></pre>
+<p>By default abridge uses <code>highlight_theme = &quot;css&quot;</code>.</p>
+<p>This allows the code block light/dark mode to change with the rest of the site, this also prevents unsafe-inline for style-src in our CSP.</p>
+<h3 id="step-4-add-new-content">Step 4: Add new content</h3>
+<p>You can copy the content from the theme directory to your project:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>cp</span><span style="font-style:italic;color:#fd971f;"> -r</span><span> themes/abridge/content .
+</span></code></pre>
+<p>You can modify or add new posts in the content directory as needed.</p>
+<h3 id="step-5-run-the-project">Step 5: Run the project</h3>
+<p>Just run <code>zola serve</code> in the root path of the project:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>zola serve
+</span></code></pre>
+<p>Zola will start the development web server making your site accessible by default at
+<code>http://127.0.0.1:1111</code>. Saved changes will live reload in the browser.</p>
+<h2 id="customization">Customization</h2>
+<p>You can customize your configurations, templates and content for yourself. Look
+at the <code>config.toml</code>, <code>content</code> files, and templates files in this
+repo for an idea.</p>
+<h3 id="number-of-items-per-page-for-pagination">Number of Items per page for pagination</h3>
+<p>To change the number of items per page edit: <code>abridge/content/_index.md</code> and change the value for <code>paginate_by</code></p>
+<h3 id="page-width">Page width</h3>
+<p>You can set the overal page width by editing <code>themes\abridge\sass\_variables.scss</code> file, and adjusting these two lines:</p>
+<pre data-lang="scss" style="background-color:#383838;color:#e6e1dc;" class="language-scss "><code class="language-scss" data-lang="scss"><span>$mw:</span><span style="color:#a5c261;">50</span><span style="color:#cc7833;">% !default</span><span>;</span><span style="color:#95815e;">// max-width
+</span><span>$mb:</span><span style="color:#a5c261;">1200</span><span style="color:#cc7833;">px !default</span><span>;</span><span style="color:#95815e;">// value at which to switch from fluid layout to using max-width
+</span></code></pre>
+<h3 id="colors-and-styles">Colors and Styles</h3>
+<p>Colors and style are handled by the sass files of <a href="https://github.com/jieiku/abridge.css">abridge.css</a></p>
+<p>Abridge comes with &quot;Skins&quot; each with their own auto, dark, light and switcher modes.
+Auto mode automatically displays a dark or light version depending on browser/OS settings.
+Switcher mode automatically displays a dark or light version depending on browser/OS settings, and has a user clickable theme switcher, but it requires additional javascript.</p>
+<p>The skin used on <a href="https://abridge.netlify.app/">the Demo</a> uses primarily orange colors.
+It is defined here: <code>/themes/abridge/sass/abridge-switcher.scss</code></p>
+<p>There is also other variations, that you will see defined in this same directory, they are also all defined in config.toml</p>
+<p>To change colors or fonts all you need to do is edit these files or duplicate them and create your own skin.
+Then in the root of your site type <code>zola build</code> which will regenerate your site, this is similar to what zola serve does, except it does not facilitate serving the site.</p>
+<h3 id="javascript-files-js-bundle-and-options">Javascript Files, js_bundle and options</h3>
+<p>These are the javascript files currently used by Abridge:</p>
+<ul>
+<li>search_index.en.js: search index generated by zola at each build for elasticlunr.</li>
+<li>elasticlunr.min.js: search library for client side searching.</li>
+<li>search.js: to make use of elasticlunr from our sites search box for both suggestions and the results page.</li>
+<li>codecopy.js: add a Copy Button to code blocks, to copy contents of the code block to clipboard.</li>
+<li>theme.js: very tiny script to facilitate local storage for the theme switcher. (never bundle, gets loaded separate)</li>
+<li>theme_button.js: tiny script for the theme switcher function when you click the theme switch button.</li>
+<li>prestyle.js: Used to preload css files <code>&lt;link rel=&quot;preload&quot;</code> - this script changes these to <code>&lt;link rel=&quot;stylesheet&quot;</code> once the page has finished loading, this allows us to load stylesheets for external fonts, fontawesome, or katex in a non blocking fashion.</li>
+</ul>
+<p>js_bundle is set to a javascript file with a bundle of multiple javascript files, this allows us to serve fewer javascript files (only the search index and the bundle). Included are a few of the likely most commonly used combinations, but you can generate these yourself using uglifyjs if you need to, there are examples in the config.toml, eg:</p>
+<p><code>uglifyjs prestyle.js theme_button.js elasticlunr.min.js search.js -o abridge-switcher.min.js -c -m</code></p>
+<ul>
+<li>search.min.js - includes: elasticlunr, search.</li>
+<li>abridge.min.js - includes: prestyle, elasticlunr, search.</li>
+<li>abridge-switcher.min.js: includes: prestyle, theme_button, elasticlunr, search.</li>
+</ul>
+<h3 id="global-configuration">Global Configuration</h3>
+<p>There are some configuration options that you can customize in <code>config.toml</code>.</p>
+<h4 id="configuration-options-before-extra-options">Configuration options before <code>extra</code> options</h4>
+<p>Set the authors's taxonomies for the site.</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#e8bf6a;">taxonomies </span><span>= [
+</span><span>  {</span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;authors&quot;</span><span>},
+</span><span>]
+</span></code></pre>
+<p>Use search function for the content.</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#e8bf6a;">build_search_index </span><span>= </span><span style="color:#6e9cbe;">true
+</span></code></pre>
+<p>​The search is the only essential thing that requires javascript in this this theme.</p>
+<p>If you set <code>build_search_index</code> to false then the javascript file will no longer be loaded.</p>
+<p>The default elasticlunr search is currently used, I may eventually switch this out for something else.</p>
+<h4 id="configuration-options-under-the-extra">Configuration options under the <code>extra</code></h4>
+<p>Most Options in the config.toml are self documenting, meaning between the name of the config value and the notes in the file it is usually obvious what an option is for.</p>
+<p>The following options should be under the <code>[extra]</code> in <code>config.toml</code></p>
+<ul>
+<li>
+<p><code>uglyurls</code> - Set to true, as well as set a file path for base_url to support a local offline mode of your site, you can then browse your site directly from disk.</p>
+</li>
+<li>
+<p><code>language_code</code> - Set the site language_code.</p>
+</li>
+<li>
+<p><code>title_separator</code> - Separator between title and title_addition, eg &quot;|&quot;: &quot;Abridge | Fast &amp; Lightweight Zola Theme&quot;</p>
+</li>
+<li>
+<p><code>title_addition</code> - a default value for title addition, used at the index.</p>
+</li>
+<li>
+<p><code>recent = true</code> - This enabled the Recent posts box visible on the top right.</p>
+</li>
+<li>
+<p><code>recent_items = 9</code> - The number of items to display in the recent posts box</p>
+</li>
+<li>
+<p><code>author</code> - Used for articles to denote the author.</p>
+</li>
+<li>
+<p><code>title_size_index</code> - Size of the Titles Font on the Index: s95, s90, s85, s80, s75, s70, false(full size)</p>
+</li>
+<li>
+<p><code>meta_index / meta_post</code></p>
+<ul>
+<li><code>position</code> - top, bottom, both, false(hidden), Where to display the meta info in relation to the summary.</li>
+<li><code>size</code> - s95, s90, s85, s80, false(full size). The size of the font for the meta info</li>
+<li><code>author</code> - true/false, Display the author in the meta info.</li>
+<li><code>readtime</code> - true/false, Display the read time in the meta info.</li>
+<li><code>readstring</code> - &quot;min&quot;, &quot;min read&quot;, &quot;minutes read&quot;. The string to display after the read time.</li>
+<li><code>date</code> - true/false, Display the date in the meta info.</li>
+<li><code>categories_tags</code> - true/false, Display the categores and tags in the meta info.</li>
+<li><code>divider</code> - <code>&quot;&amp;middot;&quot;</code>   <code>&quot;&amp;bull;&quot;</code>   <code>&quot; &quot;</code>  divider to display between meta info elements.</li>
+</ul>
+</li>
+<li>
+<p><code>footer_size</code> - Size of the Footer Font: s95, s90, s85, s80, s75, s70, false(full size)</p>
+</li>
+<li>
+<p><code>footer_credit = true</code> - This enables the powered by zola and abridge line in the footer.</p>
+</li>
+<li>
+<p><code>footer_credit_override</code> - Can be used to customize the footer credit, useful to add icons to the text, etc.</p>
+</li>
+<li>
+<p><code>logo = { file=&quot;logo.svg&quot;, width=&quot;42&quot;, height=&quot;42&quot;, alt=&quot;Abridge&quot;, text=&quot;bridge&quot; }</code> - Defines the graphical logo with optional text to follow the logo.</p>
+</li>
+<li>
+<p><code>textlogo</code> - A purely Text based logo, this will be used if logo is commented out, if both are commented out then config.title is used.</p>
+</li>
+<li>
+<p><code>sitedesc</code> - This adds the site description just below the text based logo.</p>
+</li>
+<li>
+<p><code>copyright_start_year</code> - Optionally define a start year for the copyright, otherwise the current year is used.</p>
+</li>
+<li>
+<p><code>copyright_end_year</code> - Optionally set the copyright end year, recommend leaving unset, zola build will set this to current year by default</p>
+</li>
+<li>
+<p><code>headhr</code> - Display a horizontal rule below header</p>
+</li>
+<li>
+<p><code>foothr</code> - Display a horizontal rule above footer</p>
+</li>
+<li>
+<p><code>menu</code> - This is an array of links to display at the top right corner of the page</p>
+</li>
+<li>
+<p><code>menu_footer</code> - This is an array of links to display in the footer of the page</p>
+</li>
+<li>
+<p><code>security_header_referrer</code> - This is mostly used for tracking, the default is set to &quot;strict-origin-when-cross-origin&quot; <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">info</a></p>
+</li>
+<li>
+<p><code>security_header_csp</code> - Content Security policy, to enfore security rules: <a href="https://observatory.mozilla.org">observatory</a>, <a href="https://csp-evaluator.withgoogle.com/">csp-google</a></p>
+</li>
+<li>
+<p><code>integrity</code> - Useful to set false during development, should normally be set to true.</p>
+</li>
+<li>
+<p><code>js_search_index</code> - The search index file to include in the header, comment out to disable.</p>
+</li>
+<li>
+<p><code>js_prestyle</code> - The script file used to preload: FontAwesome, Katex, external Google Fonts.</p>
+</li>
+<li>
+<p><code>js_search</code> - The search script file to include in the header, comment out to disable.</p>
+</li>
+<li>
+<p><code>js_theme</code> - Used for the Theme Switcher, to facilitate localstorage.</p>
+</li>
+<li>
+<p><code>js_themeButton</code> - Used for the Theme Switcher.</p>
+</li>
+<li>
+<p><code>js_bundle</code> - Used to define a javascript bundle, <a href="https://github.com/Jieiku/abridge#javascript-files-js_bundle-and-options">more information</a>.</p>
+</li>
+<li>
+<p><code>stylesheets = [ &quot;abridge.css&quot; ]</code> - The stylesheet file(s) to include in the header.</p>
+</li>
+<li>
+<p><code>banner</code> - Image to use in seo related cards, this will be the fallback image if the individual articles does not provide one.</p>
+</li>
+<li>
+<p><code>favicon_...</code> - Used to set the various favicons (displayed in bookmarks and active browser tab)</p>
+</li>
+<li>
+<p><code>fontawesome =</code> - Uncomment to enable fontawesome library, this will include the file in the header.</p>
+<ul>
+<li><code>icon_read</code> - icon to display in meta info on index and posts, comment out to disable</li>
+<li><code>icon_date</code> - icon to display in meta info on index and posts, comment out to disable</li>
+<li><code>icon_info</code> - icon to display in meta info on index and posts, comment out to disable</li>
+<li><code>icon_author</code> - icon to display in meta info on index and posts, comment out to disable</li>
+</ul>
+</li>
+<li>
+<p><code>fonts =</code> - Uncomment to load external fonts, they will be loaded in the header.</p>
+</li>
+<li>
+<p><code>math</code> - Set to true to load the Katex library, enabling the use of the <a href="https://abridge.netlify.app/overview-math/">katex shortcode</a> (recommend setting on a per page basis instead.)</p>
+</li>
+<li>
+<p><code>math_auto_render</code> - This allows you to define a section of math notation using only $$ $$ symbols instead of using the katex shortcode directly. (recommend setting on a per page basis instead.)</p>
+</li>
+<li>
+<p><code>katex_css</code>, <code>katex_js</code>, <code>mathtex_js</code>, <code>katex_autorender_js</code>, <code>katex_options</code> - Used for Math Notation.</p>
+</li>
+<li>
+<p><code>katex_bundle</code> - Used to bundle all of the math related js.</p>
+</li>
+<li>
+<p><code>keywords =</code> - This is used for SEO.</p>
+</li>
+<li>
+<p><code>seo =</code> - This is used for SEO, for the social media related tags, eg: opengraph, facebook, twitter if set to false it disables them all.</p>
+</li>
+<li>
+<p><code>extra.social</code> - These are the options for the social icons in the footer, and a couple are also used in SEO related meta tags.</p>
+</li>
+</ul>
+<p>Additionally you should configure which social icons you plan to use. (makes the css file size smaller)</p>
+<p>open <code>themes/abridge/sass/_variables.scss</code></p>
+<p>To simply turn them all off you can set <code>$enable-icons: false</code>
+Otherwise to turn on only the ones you need you would set <code>$enable-icons: true</code>
+Then enable only the icons you need, eg for mail you would set <code>$icon-mail: true</code>
+You should then disable all the icons that you do not use, as this will decrease the final size of your css file.
+The difference in size is NOT a lot, without icons its ~4kb, with all the social icons its ~12kb.
+There are also some general purpose icons you can use, they are disabled by default.</p>
+<p>The theme requires tags and categories taxonomies to be enabled in your <code>config.toml</code>:</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#e8bf6a;">taxonomies </span><span>= [
+</span><span>    </span><span style="color:#95815e;"># You can enable/disable RSS
+</span><span>    {</span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;categories&quot;</span><span>, </span><span style="color:#e8bf6a;">rss </span><span>= </span><span style="color:#6e9cbe;">true</span><span>},
+</span><span>    {</span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;tags&quot;</span><span>, </span><span style="color:#e8bf6a;">rss </span><span>= </span><span style="color:#6e9cbe;">true</span><span>},
+</span><span>]
+</span></code></pre>
+<h3 id="top-and-footer-menus">Top and Footer menus</h3>
+<p>Set a field in <code>extra</code> with a key of <code>menu</code> and <code>menu_footer</code>.
+If a link should have a trailing slash at the end of the url set <code>slash = true</code>.</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#95815e;"># This is the default menu
+</span><span style="color:#e8bf6a;">menu </span><span>= [
+</span><span>    {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Home&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>},
+</span><span>    {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/about/&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;About&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>},
+</span><span>    {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/posts/&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Posts&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>},
+</span><span>    {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/categories/&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Categories&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>},
+</span><span>    {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/tags/&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Tags&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>},
+</span><span>]
+</span><span style="color:#e8bf6a;">menu_footer </span><span>= [
+</span><span>    {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Home&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>},
+</span><span>    {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/about/&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;About&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>},
+</span><span>    {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/contact/&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Contact&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>},
+</span><span>    {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/privacy/&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Privacy&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>},
+</span><span>    {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/sitemap.xml&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Sitemap&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">false</span><span>},
+</span><span>]
+</span></code></pre>
+<h3 id="seo-and-header-tags">SEO and Header Tags</h3>
+<p>Most SEO Tags have been added as well as some important head tags for browser compatibility.</p>
+<p>You can review the SEO tags in the head macro located at <code>templates/macros/head.html</code>, all configurable values should be in config.toml under config.extra or in the content markdown files.</p>
+<p>In your post markdown file you should set a title less than 60 characters and a description between 80 and 160 characters in length. The description is what is displayed in search results below the page title. Anywhere that you do not set a page description, the primary site config.description will be used instead.</p>
+<p>You should also set page specific keywords unless your keywords defined in config.toml suffice, any keywords that you add to the page are in addition to the ones defined in config.toml, so do not add those same keywords to your page keywords.</p>
+<p>You can optionally also set a page specific image for search results by using page.extra.thumbnail. OpenGraph recommends 1200 x 630 (1.9:1). Twitter recommends 2:1 for large and 1:1 for small. If you do not set a page specific thumbnail then the banner defined in config.toml will be used instead.</p>
+<p>Refer to <a href="https://raw.githubusercontent.com/Jieiku/abridge/master/content/overview-images/index.md">overview-images</a> for an example:</p>
+<pre data-lang="md" style="background-color:#383838;color:#e6e1dc;" class="language-md "><code class="language-md" data-lang="md"><span>+++
+</span><span>title = &quot;Image Shortcodes&quot;
+</span><span>description = &quot;Images can be embeded directly using markdown </span><span style="color:#ec3533;">`![Ferris](ferris.svg)`</span><span>, but using a shortcode prevents CLS by explicitly setting the width and height.&quot;
+</span><span>date = 2021-05-19
+</span><span>
+</span><span>[taxonomies]
+</span><span>categories = [&quot;Features&quot;]
+</span><span>tags = [&quot;shortcodes&quot;,&quot;images&quot;]
+</span><span>[extra]
+</span><span>toc = true
+</span><span>keywords = &quot;Image, Markdown, Shortcodes, Hover&quot;
+</span><span>thumbnail = &quot;ferris-gesture.png&quot;
+</span><span>+++
+</span></code></pre>
+<p>There are tools you can use to test your page SEO metadata, such as: <a href="https://smallseotools.com/meta-tags-analyzer/">smallseotools.com</a></p>
+<h3 id="katex-math-notation">KaTeX Math Notation</h3>
+<p>KaTeX can be used to display complex mathematics, it is a &quot;Fast math typesetting for the web.&quot;</p>
+<p>You can see a demo on <a href="https://abridge.netlify.app/overview-math/">this page</a>.</p>
+<p>I recommend only enabling math on a per page bases in your post.md files, instead of in your main config.toml file.</p>
+<h3 id="templates">Templates</h3>
+<p>All pages extend to <code>base.html</code>, and you can customize them as need.</p>
+<h2 id="optional-performance-optimizations">Optional Performance Optimizations:</h2>
+<h3 id="theme-switcher">Theme-Switcher</h3>
+<p>The theme switcher relies on javascript to work, it applies the .light class to the root documentElement. The file that handles this (theme.js) is tiny and optimized and it is the first file loaded in the head, so the performance hit is minimal, but it does still exist. Without the Theme switcher you can still use The automatic Theme, it works by using Browser/OS preference, you can even install a <a href="https://addons.mozilla.org/en-US/firefox/addon/theme-switcher-for-firefox/">Firefox plugin</a> to quickly switch between the two. By default the demo has the theme switcher enabled so that it can be evaluated.</p>
+<p>With the growing number of options and configuration it can get confusing. To disable the Theme Switcher, you would comment out the Switcher section and enable your choice in the No switcher section, for example:</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#95815e;">########## Switcher ########## (comment this block out if NOT using switcher):
+</span><span style="color:#95815e;">#js_theme = &quot;theme.min.js&quot; # Separate Always, comment out if using -auto/-light/-dark stylesheet. (required for switcher)
+</span><span style="color:#95815e;">#js_themeButton = &quot;theme_button.js&quot;# Bundleable
+</span><span style="color:#95815e;">#js_bundle = &quot;abridge-switcher.min.js&quot;# Bundle JS File, comment out to disable (includes switcher)
+</span><span style="color:#95815e;">#stylesheets = [ &quot;abridge-switcher.css&quot; ] # Orange Automatic Dark/Light Theme based on browser/system preference with switcher
+</span><span style="color:#95815e;">#stylesheets = [ &quot;abridge-blue-switcher.css&quot; ] # Blue Automatic Night/Light Theme based on browser/system preference with switcher
+</span><span style="color:#95815e;">#stylesheets = [ &quot;abridge-blueshade-switcher.css&quot; ] # BlueShade Automatic Night/Light Theme based on browser/system preference with switcher
+</span><span>
+</span><span style="color:#95815e;">########## No Switcher ##########
+</span><span style="color:#95815e;">#js_bundle = &quot;search.min.js&quot;# Bundle JS File, comment out to disable (search only: no switcher/prestyle)
+</span><span style="color:#e8bf6a;">js_bundle </span><span>= </span><span style="color:#c1be91;">&quot;abridge.min.js&quot;</span><span style="color:#95815e;"># Bundle JS File, comment out to disable (no switcher)
+</span><span style="color:#e8bf6a;">stylesheets </span><span>= [ </span><span style="color:#c1be91;">&quot;abridge.css&quot; </span><span>] </span><span style="color:#95815e;"># Orange Automatic Dark/Light Theme based on browser/system preference
+</span></code></pre>
+<h3 id="optimize-png-files">Optimize PNG files:</h3>
+<p>All png files can be optimized using <a href="https://github.com/shssoichiro/oxipng">oxipng</a>, this usually results in files 1/2 the size:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#da4939;">cd</span><span> static
+</span><span>oxipng</span><span style="font-style:italic;color:#fd971f;"> -o</span><span> max</span><span style="font-style:italic;color:#fd971f;"> --strip</span><span> all</span><span style="font-style:italic;color:#fd971f;"> -a -Z </span><span style="color:#cc7833;">*</span><span>.png
+</span></code></pre>
+<p>You can go even farther if you use leanify:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>git clone https://github.com/JayXon/Leanify
+</span><span style="color:#da4939;">cd</span><span> Leanify
+</span><span>make
+</span><span>sudo cp leanify /usr/local/bin/leanify
+</span><span style="color:#da4939;">exit  </span><span style="font-style:italic;color:#7c7865;">#launch new terminal
+</span><span>leanify</span><span style="font-style:italic;color:#fd971f;"> -i</span><span> 7777 </span><span style="color:#cc7833;">*</span><span>.png
+</span><span>leanify</span><span style="font-style:italic;color:#fd971f;"> -i</span><span> 7777 </span><span style="color:#cc7833;">*</span><span>.ico
+</span></code></pre>
+<p>Results of using leanify on files previously processed with oxipng (smaller favicons compressed a lot more):</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>Processing: android-chrome-192x192m.png
+</span><span>2.23 KB -</span><span style="color:#cc7833;">&gt; </span><span style="color:#a5c261;">2</span><span>.22 KB      Leanified: 11 B (0.48%)
+</span><span>Processing: android-chrome-192x192.png
+</span><span>2.51 KB -</span><span style="color:#cc7833;">&gt; </span><span style="color:#a5c261;">2</span><span>.48 KB      Leanified: 33 B (1.28%)
+</span><span>Processing: android-chrome-512x512.png
+</span><span>5.49 KB -</span><span style="color:#cc7833;">&gt; </span><span style="color:#a5c261;">5</span><span>.25 KB      Leanified: 241 B </span><span style="color:#cc7833;">**</span><span>(4.29%)</span><span style="color:#cc7833;">**
+</span><span>Processing: apple-touch-icon.png
+</span><span>2.57 KB -</span><span style="color:#cc7833;">&gt; </span><span style="color:#a5c261;">2</span><span>.54 KB      Leanified: 30 B (1.14%)
+</span><span>Processing: banner.png
+</span><span>13.07 KB -</span><span style="color:#cc7833;">&gt; </span><span style="color:#a5c261;">12</span><span>.93 KB    Leanified: 138 B (1.03%)
+</span><span>Processing: mstile-150x150.png
+</span><span>2.24 KB -</span><span style="color:#cc7833;">&gt; </span><span style="color:#a5c261;">2</span><span>.20 KB      Leanified: 38 B (1.66%)
+</span><span>Processing: favicon-16x16.png
+</span><span>559 B -</span><span style="color:#cc7833;">&gt; </span><span style="color:#a5c261;">366</span><span> B  Leanified: 193 B </span><span style="color:#cc7833;">**</span><span>(34.53%)</span><span style="color:#cc7833;">**
+</span><span>Processing: favicon-32x32.png
+</span><span>969 B -</span><span style="color:#cc7833;">&gt; </span><span style="color:#a5c261;">663</span><span> B  Leanified: 306 B </span><span style="color:#cc7833;">**</span><span>(31.58%)</span><span style="color:#cc7833;">**
+</span><span>Processing: favicon.ico
+</span><span>2.59 KB -</span><span style="color:#cc7833;">&gt; </span><span style="color:#a5c261;">1</span><span>.90 KB      Leanified: 703 B </span><span style="color:#cc7833;">**</span><span>(26.53%)</span><span style="color:#cc7833;">**
+</span></code></pre>
+<p>Google lighthouse will often notice when your pictures could be more compressed, this may even help SEO.</p>
+<h3 id="pre-gzip-brotli-content-to-serve-with-nginx">Pre gzip/brotli content to serve with nginx:</h3>
+<p>If you are serving your site with nginx, you can pre gzip your content.</p>
+<p>First configure nginx:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>sudo nano /etc/nginx/nginx.conf
+</span><span>
+</span><span>gzip on</span><span style="color:#cc7833;">;
+</span><span>gzip_vary on</span><span style="color:#cc7833;">;
+</span><span>gzip_proxied expired no-cache no-store private auth</span><span style="color:#cc7833;">;
+</span><span style="font-style:italic;color:#7c7865;">#gzip_proxied any;
+</span><span>gzip_comp_level 9</span><span style="color:#cc7833;">;
+</span><span>gzip_buffers 64 16k</span><span style="color:#cc7833;">;
+</span><span style="font-style:italic;color:#7c7865;">#gzip_buffers 16 8k;
+</span><span>gzip_http_version 1.1</span><span style="color:#cc7833;">;
+</span><span>gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript image/svg+xml application/xhtml+xml application/x-javascript application/x-font-ttf application/vnd.ms-fontobject font/opentype font/ttf font/eot font/otf</span><span style="color:#cc7833;">;
+</span><span style="font-style:italic;color:#7c7865;">#gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+</span></code></pre>
+<p>Then you can gzip/brotli your files:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>zola build
+</span><span>find </span><span style="color:#d0d0ff;">~</span><span>/.dev/abridge/public</span><span style="font-style:italic;color:#fd971f;"> -type</span><span> f</span><span style="font-style:italic;color:#fd971f;"> -regextype</span><span> posix-extended</span><span style="font-style:italic;color:#fd971f;"> -regex </span><span style="color:#a5c261;">&#39;.*\.(htm|html|css|js|xml|xsl|txt|woff|woff2|svg|otf|eot|ttf)&#39;</span><span style="font-style:italic;color:#fd971f;"> -exec</span><span> gzip</span><span style="font-style:italic;color:#fd971f;"> --best -k -f </span><span>{} </span><span style="color:#519f50;">\+</span><span style="font-style:italic;color:#fd971f;"> -exec</span><span> brotli</span><span style="font-style:italic;color:#fd971f;"> --best -f </span><span>{} </span><span style="color:#519f50;">\;
+</span><span>rsync</span><span style="font-style:italic;color:#fd971f;"> -zvrh </span><span style="color:#d0d0ff;">~</span><span>/.dev/abridge/public/ web:/var/www/abridge
+</span></code></pre>
+<p>Nginx does not come by default with brotli support, but adding it was not difficult.</p>
+<h2 id="reporting-issues">Reporting Issues</h2>
+<p>We use GitHub Issues as the official bug tracker for <strong>abridge</strong>.
+Please search <a href="https://github.com/jieiku/abridge/issues">existing issues</a>.
+It’s possible someone has already reported the same problem.
+If your problem or idea is not addressed yet, <a href="https://github.com/jieiku/abridge/issues/new">open a new issue</a>.</p>
+<h2 id="contributing-and-philosophy">Contributing and Philosophy</h2>
+<p>We'd love your help! Especially with fixes to issues.</p>
+<p>The overall idea behind abridge is to be lightweight and fast, and to work properly even if javascript is disabled.</p>
+<p>The only feature that some people may consider a necessity that relies on javascript is the Search.</p>
+<p>Any feature added to abridge that relies on javascript will do so with it disabled by default.</p>
+<h2 id="license">License</h2>
+<p><strong>abridge</strong> is distributed under the terms of the
+<a href="https://github.com/jieiku/abridge/blob/master/LICENSE">MIT license</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2022 — <a class="white" href="https://vincentprouillet.com">Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors">contributors</a>
+        </footer>
+
+        <script type="text/javascript" src="https://getzola.ru/elasticlunr.min.js"></script>
+        <script type="text/javascript" src="https://getzola.ru/search_index.en.js"></script>
+        <script type="text/javascript" src="https://getzola.ru/search.js"></script>
+    </body>
+</html>

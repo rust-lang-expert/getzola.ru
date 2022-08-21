@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Everything you need to make a static site engine in one binary.">
+        <meta name="author" content="Vincent Prouillet">
+        <title>dose | Zola </title>
+        <link rel="stylesheet" href="https://getzola.ru/site.css"/>
+        <link rel="icon" href="https://getzola.ru/favicon.ico">
+    </head>
+    <body>
+
+        <header>
+            <nav class="">
+                <a class="header__logo white" href="https:&#x2F;&#x2F;getzola.ru&#x2F;">Zola</a>
+                <a class="white" href="https://getzola.ru/documentation/" class="nav-link">Docs</a>
+                <a class="white" href="https://getzola.ru/themes/" class="nav-link">Themes</a>
+                <a class="white" href="https://zola.discourse.group/" class="nav-link">Forum</a>
+                <a class="white" href="https://github.com/getzola/zola" class="nav-link">GitHub</a>
+
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 Search the docs">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;getzola.ru&#x2F;themes&#x2F;dose&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>dose</h1>
+            <p>a small blog theme</p>
+            <p><b>Author:</b> oltdaniel</p>
+            <p><b>License:</b> MIT</p>
+            <p><b>Homepage:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;oltdaniel&#x2F;dose">https:&#x2F;&#x2F;github.com&#x2F;oltdaniel&#x2F;dose</a></p>
+            
+              <p><b>Live Demo:</b> <a href="https:&#x2F;&#x2F;oltdaniel.github.io&#x2F;dose">https:&#x2F;&#x2F;oltdaniel.github.io&#x2F;dose</a></p>
+            
+            <p><b>Last updated:</b> 2022-06-15T01:35:37-07:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="dose">dose</h1>
+<p><img src="https://getzola.ru/themes/dose/screenshot.png?raw=true" alt="" /></p>
+<h2 id="installation">Installation</h2>
+<p>First download this theme to your <code>themes</code> directory:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#da4939;">cd</span><span> themes
+</span><span>git clone https://github.com/oltdaniel/dose.git
+</span></code></pre>
+<p>and then enable it in your <code>config.toml</code>:</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#e8bf6a;">theme </span><span>= </span><span style="color:#c1be91;">&quot;dose&quot;
+</span></code></pre>
+<p>The following taxonomies are enabled:</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#e8bf6a;">taxonomies </span><span>= [
+</span><span>    {</span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;tags&quot;</span><span>},
+</span><span>]
+</span></code></pre>
+<p>And the theme uses the following extras:</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[</span><span style="color:#e8bf6a;">extra</span><span>]
+</span><span style="color:#e8bf6a;">social_media </span><span>= [
+</span><span>    {</span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;GitHub&quot;</span><span>, </span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;https://github.com/oltdaniel&quot;</span><span>},
+</span><span>    {</span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Twitter&quot;</span><span>, </span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;https://twitter.com/@twitter&quot;</span><span>},
+</span><span>]
+</span></code></pre>
+<p>The description of yourself with your image, you can modify by using a template. Just create a new
+file <code>myblog/parts/me.html</code>:</p>
+<pre data-lang="html" style="background-color:#383838;color:#e6e1dc;" class="language-html "><code class="language-html" data-lang="html"><span>&lt;</span><span style="color:#e8bf6a;">img </span><span style="color:#86c20e;">src=</span><span>&quot;</span><span style="color:#c1be91;">https://via.placeholder.com/50</span><span>&quot; </span><span style="color:#86c20e;">height=</span><span>&quot;</span><span style="color:#c1be91;">50px</span><span>&quot; </span><span style="color:#86c20e;">width=</span><span>&quot;</span><span style="color:#c1be91;">50px</span><span>&quot;&gt;
+</span><span>&lt;</span><span style="color:#e8bf6a;">p</span><span>&gt;Hi, this is me. I write about microcontrollers, programming and cloud software. ...&lt;/</span><span style="color:#e8bf6a;">p</span><span>&gt;
+</span></code></pre>
+<p>If you want to have all pages sorted by their date, please create <code>myblog/content/_index.md</code>:</p>
+<pre style="background-color:#383838;color:#e6e1dc;"><code><span>+++
+</span><span>sort_by = &quot;date&quot;
+</span><span>+++
+</span></code></pre>
+<h3 id="about">About</h3>
+<h4 id="inspired">Inspired</h4>
+<p>I created this theme mainly for my personal website. You are free to use it or modify it. It is inspired by the <a href="https://riggraz.dev/no-style-please/"><code>no-style-please</code></a> jekyll theme.</p>
+<h4 id="typography">Typography</h4>
+<p>This theme uses no special font, just the browsers default monospace font. Yes, this can mean that the website could be rendered differently, but users can freely choose their webfont.</p>
+<h4 id="darkmode">Darkmode</h4>
+<p>This theme supports dark and light mode. Currently this will be only switched based on the users preffered system theme. But a manual switch will follow in the future in the footer (see the todo).</p>
+<table><thead><tr><th>light</th><th>dark</th></tr></thead><tbody>
+<tr><td><img src="https://getzola.ru/themes/dose/screenshot-light.png" alt="" /></td><td><img src="https://getzola.ru/themes/dose/screenshot-dark.png" alt="" /></td></tr>
+</tbody></table>
+<h4 id="size">Size</h4>
+<p>We need about <code>~2.3KiB</code> extra stuff aside from images and raw html. This is divided up to <code>~2.1KiB CSS</code> and <code>212B JS</code>.</p>
+<p>Test yourself with <code>zola build 1&gt;/dev/null; echo &quot;scale=2; $(cat public/**/*.{js,css} | wc -c)/1024&quot; | bc -l</code>.</p>
+<h4 id="syntax-highlighting">Syntax Highlighting</h4>
+<p>As I didn't want to invest any time in creating an own syntax color schema for this theme, I suggest to use <code>visual-studio-dark</code>, which is the same one used in the demo page.</p>
+<h4 id="customization">Customization</h4>
+<p>You can create your own version of this theme, by simply changing the sass variables in <code>sass/style.scss</code> to match your taste.</p>
+<pre data-lang="scss" style="background-color:#383838;color:#e6e1dc;" class="language-scss "><code class="language-scss" data-lang="scss"><span style="color:#95815e;">/**
+</span><span style="color:#95815e;"> * Variables
+</span><span style="color:#95815e;"> */
+</span><span>$base-background: </span><span style="color:#86c20e;">white</span><span>;
+</span><span>$text-color: </span><span style="color:#86c20e;">black</span><span>;
+</span><span>$article-tag: </span><span style="color:#86c20e;">green</span><span>;
+</span><span>$lang-tag: </span><span style="color:#86c20e;">red</span><span>;
+</span><span>$link-color: </span><span style="color:#86c20e;">blue</span><span>;
+</span><span>$target-color: </span><span style="color:#86c20e;">yellow</span><span>;
+</span><span>$separator-decoration: </span><span style="color:#c1be91;">&quot;//////&quot;</span><span>;
+</span></code></pre>
+<h3 id="todo">TODO</h3>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+introduce sass variables for colors</li>
+<li><input disabled="" type="checkbox" checked=""/>
+dark/light switch with javascript and store in browser local storage</li>
+</ul>
+<h2 id="license">License</h2>
+<p><img src="https://img.shields.io/github/license/oltdaniel/dose" alt="GitHub" /></p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2022 — <a class="white" href="https://vincentprouillet.com">Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors">contributors</a>
+        </footer>
+
+        <script type="text/javascript" src="https://getzola.ru/elasticlunr.min.js"></script>
+        <script type="text/javascript" src="https://getzola.ru/search_index.en.js"></script>
+        <script type="text/javascript" src="https://getzola.ru/search.js"></script>
+    </body>
+</html>
